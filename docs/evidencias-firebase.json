@@ -1,0 +1,21 @@
+{
+  "ambiente": "Emuladores oficiais do Firebase",
+  "banco": "demo-meu-foco-default-rtdb",
+  "usuarioDeTeste": "ana.demo.llsg3@exemplo.com",
+  "uid": "fUVqK6A1r6Y9IBUq6IdEXmxiphws",
+  "tarefas": {
+    "-P6_btJHUQ1cYXszCGC8": {
+      "concluida": true,
+      "dataVencimento": "2026-11-16",
+      "descricao": "Revisar navegação, Models e integração com Firebase.",
+      "id": "-P6_btJHUQ1cYXszCGC8",
+      "prioridade": "alta",
+      "titulo": "Revisar Flutter e Firebase"
+    }
+  },
+  "isolamentoEntreUsuarios": "Acesso de outra conta negado pelo servidor (HTTP 401).",
+  "listenerEmTempoReal": "Edição e exclusão recebidas por uma segunda aba aberta.",
+  "sessaoPersistente": true,
+  "temaPersistente": true,
+  "errosJavaScript": []
+}
