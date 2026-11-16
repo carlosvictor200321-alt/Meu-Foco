@@ -8,9 +8,7 @@ const { requireAuth } = require('firebase-tools/lib/requireAuth');
 const projects = require('firebase-tools/lib/management/projects');
 const apps = require('firebase-tools/lib/management/apps');
 const databases = require('firebase-tools/lib/management/database');
-const identity = require('firebase-tools/lib/gcp/identityPlatform');
 const apiEnabled = require('firebase-tools/lib/ensureApiEnabled');
-const { Client } = require('firebase-tools/lib/apiv2');
 
 const projectId = process.argv[2];
 if (!projectId || !/^[a-z][a-z0-9-]{4,28}[a-z0-9]$/.test(projectId)) {
@@ -42,28 +40,17 @@ try {
     );
   }
   console.log('Realtime Database pronto.');
-  try {
-    await identity.updateConfig(projectId,
-      { signIn: { email: { enabled: true, passwordRequired: true } } },
-      'signIn.email.enabled,signIn.email.passwordRequired');
-  } catch (error) {
-    if (!/CONFIGURATION_NOT_FOUND|PROJECT_NOT_FOUND|not found/i.test(error.message)) throw error;
-    const client = new Client({ urlPrefix: 'https://identitytoolkit.googleapis.com', apiVersion: 'v2' });
-    await client.post('projects/' + projectId + '/identityPlatform:initializeAuth', {});
-    await identity.updateConfig(projectId,
-      { signIn: { email: { enabled: true, passwordRequired: true } } },
-      'signIn.email.enabled,signIn.email.passwordRequired');
-  }
-  console.log('Login por e-mail e senha ativado.');
-
   const existentes = await apps.listFirebaseApps(projectId, apps.AppPlatform.ANY);
-  const android = existentes.find((a) => a.platform === 'ANDROID' && a.packageName === 'br.com.meufoco.meu_foco')
+  const android = existentes.find((a) => a.platform === 'ANDROID' &&
+    (a.packageName || a.namespace) === 'br.com.meufoco.meu_foco')
     || await apps.createAndroidApp(projectId, { displayName: 'Meu Foco Android', packageName: 'br.com.meufoco.meu_foco' });
-  const ios = existentes.find((a) => a.platform === 'IOS' && a.bundleId === 'br.com.meufoco.meuFoco')
+  const ios = existentes.find((a) => a.platform === 'IOS' &&
+    (a.bundleId || a.namespace) === 'br.com.meufoco.meuFoco')
     || await apps.createIosApp(projectId, { displayName: 'Meu Foco iOS', bundleId: 'br.com.meufoco.meuFoco' });
   const web = existentes.find((a) => a.platform === 'WEB' && a.displayName === 'Meu Foco Web')
     || await apps.createWebApp(projectId, { displayName: 'Meu Foco Web' });
   console.log('Aplicativos Android, iOS e Web registrados.');
+
 
   const androidData = apps.getAppConfigFile(await apps.getAppConfig(android.appId, 'ANDROID'), 'ANDROID');
   const iosData = apps.getAppConfigFile(await apps.getAppConfig(ios.appId, 'IOS'), 'IOS');
@@ -116,9 +103,9 @@ try {
   await writeFile('.firebaserc', JSON.stringify({ projects: { default: projectId } }, null, 2) + '\n');
   const firebaseBin = require.resolve('firebase-tools/lib/bin/firebase');
   const deploy = spawnSync(process.execPath,
-    [firebaseBin, 'deploy', '--only', 'database', '--project', projectId, '--non-interactive'],
+    [firebaseBin, 'deploy', '--only', 'auth,database', '--project', projectId, '--non-interactive'],
     { cwd: resolve('.'), stdio: 'inherit' });
-  if (deploy.status !== 0) throw new Error('Falha ao publicar regras do banco.');
+  if (deploy.status !== 0) throw new Error('Falha ao configurar autenticacao e publicar regras do banco.');
   console.log('Firebase configurado. As opções públicas estão em lib/firebase_options.dart.');
 } catch (error) {
   console.error('Configuração interrompida:', error.message);

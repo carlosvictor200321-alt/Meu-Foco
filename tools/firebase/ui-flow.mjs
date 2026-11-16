@@ -44,10 +44,13 @@ async function entrar(emailAtual = email, senhaAtual = senha) {
 async function preencher(nome, valor) {
   const campo = page.getByRole('textbox', { name: new RegExp('^' + nome + '(?:\\s|$)') });
   await campo.click();
+  await page.waitForTimeout(200);
   await campo.press('ControlOrMeta+A');
+  await campo.press('Backspace');
+  await page.waitForTimeout(150);
   await campo.pressSequentially(valor, { delay: 15 });
   await campo.press('Tab');
-  await page.waitForTimeout(100);
+  await page.waitForTimeout(200);
 }
 try {
   await habilitar(page);

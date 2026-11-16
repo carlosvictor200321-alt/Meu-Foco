@@ -4,8 +4,8 @@ Gerenciador de tarefas pessoais em **Flutter/Dart**, desenvolvido conforme os re
 
 ## Abrir o aplicativo
 
-- **Android:** instale o APK disponível em `entrega/`. O APK da nuvem exige conexão com a internet; a versão local exige os emuladores no computador e o redirecionamento USB descrito abaixo.
-- **Navegador:** dê dois cliques em **Abrir aplicativo.bat**, depois de conectar o projeto Firebase.
+- **Android:** instale `entrega/meu-foco.apk`. Essa versão já está conectada ao Firebase na nuvem e usa a internet. A versão `meu-foco-local.apk` exige os emuladores no computador e o redirecionamento USB descrito abaixo.
+- **Navegador:** dê dois cliques em **Abrir aplicativo.bat**.
 - **Teste local:** abra **Abrir emuladores.bat** e, em seguida, **Abrir aplicativo local.bat**.
 
 Crie sua conta com nome, e-mail e senha. Cada conta tem suas próprias tarefas. A senha é gerenciada pelo Firebase Authentication.
@@ -45,10 +45,12 @@ Os arquivos `pubspec.lock` e `tools/firebase/package-lock.json` fixam as depend�
 
 ## Firebase na nuvem
 
-Projeto informado: **gerenciamento-de-tarefas-3b28d**.
+Projeto conectado: **gerenciamento-de-tarefas-2f419**. Os arquivos de configuração pública já estão incluídos e o modo padrão utiliza a nuvem. O login por e-mail/senha e as regras do Realtime Database estão publicados.
+
+Para repetir a configuração ou conectar outro projeto:
 
 ```powershell
-.\scripts\configurar-firebase.ps1 -Projeto gerenciamento-de-tarefas-3b28d
+.\scripts\configurar-firebase.ps1 -Projeto gerenciamento-de-tarefas-2f419
 .\scripts\iniciar.ps1
 ```
 
@@ -67,6 +69,8 @@ flutter devices
 ```
 
 O último comando gera `entrega/meu-foco.apk`. A assinatura de desenvolvimento é adequada para instalar e apresentar a atividade. Publicação na Play Store exige uma chave de assinatura do proprietário.
+
+O script de geração usa um alias temporário de unidade no Windows para que o compilador Android trabalhe com um caminho sem acentos. Os arquivos continuam na pasta original da Área de Trabalho e o alias é removido ao terminar.
 
 Para testar com Firebase local:
 

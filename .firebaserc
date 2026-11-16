@@ -1,3 +1,5 @@
 {
-  "projects": { "default": "demo-meu-foco" }
+  "projects": {
+    "default": "gerenciamento-de-tarefas-2f419"
+  }
 }

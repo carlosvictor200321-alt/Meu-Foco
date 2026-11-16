@@ -7,14 +7,17 @@
 | Flutter analyze | Código sem problemas na análise estática |
 | Flutter test | 10 testes aprovados |
 | Regras do Realtime Database | 6 testes aprovados nos emuladores oficiais |
-| Compilação Android | APK de depuração compilado para ARM, ARM64 e x64 |
+| Compilação Android | APK release da nuvem e APK de depuração local; ARM, ARM64 e x64 |
+| Assinatura Android | APK release verificado com apksigner; assinatura v2 válida |
 | Interface | Conferência visual em viewport de celular de 390 × 844 |
-| Fluxo completo em execução | Aprovado com os emuladores Firebase, duas abas, reabertura e isolamento por conta |
+| Fluxo completo em execução | Aprovado na nuvem e nos emuladores Firebase, com duas abas, reabertura e isolamento por conta |
 | iOS | Projeto e configuração de plataforma preparados; compilação exige macOS/Xcode |
 
 Os testes Flutter verificam serialização do model, tratamento de erro real de autenticação, vencimento por dia, restauração do tema, informações do usuário, validação do login, cadastro, CRUD de duas tarefas com prioridade, mudança de situação, filtros, descarte de formulário e logout.
 
 Os testes do banco verificam acesso anônimo negado, CRUD do proprietário, rejeição de leitura/edição/exclusão por outra conta, bloqueio da raiz, validação do formato e listeners em tempo real.
+
+O projeto conectado é `gerenciamento-de-tarefas-2f419`. A execução final confirmou dados reais no Realtime Database, atualização simultânea entre duas abas e HTTP 401 para uma segunda conta tentando ler tarefas da primeira. O APK release contém a configuração desse projeto nas três arquiteturas, com o modo de emulador desativado.
 
 ## Teste completo no aplicativo em execução
 

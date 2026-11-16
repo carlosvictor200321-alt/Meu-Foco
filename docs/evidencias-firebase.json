@@ -1,14 +1,14 @@
 {
-  "ambiente": "Emuladores oficiais do Firebase",
-  "banco": "demo-meu-foco-default-rtdb",
-  "usuarioDeTeste": "ana.demo.llsg3@exemplo.com",
-  "uid": "fUVqK6A1r6Y9IBUq6IdEXmxiphws",
+  "ambiente": "Firebase na nuvem",
+  "banco": "https://gerenciamento-de-tarefas-2f419-default-rtdb.firebaseio.com",
+  "usuarioDeTeste": "ana.demo.mfy5o@exemplo.com",
+  "uid": "23rhmmZB3aMykXh5FXbIQdAIGyO2",
   "tarefas": {
-    "-P6_btJHUQ1cYXszCGC8": {
+    "-P6_hKFkFKrIigRDZCDM": {
       "concluida": true,
       "dataVencimento": "2026-11-16",
       "descricao": "Revisar navegação, Models e integração com Firebase.",
-      "id": "-P6_btJHUQ1cYXszCGC8",
+      "id": "-P6_hKFkFKrIigRDZCDM",
       "prioridade": "alta",
       "titulo": "Revisar Flutter e Firebase"
     }

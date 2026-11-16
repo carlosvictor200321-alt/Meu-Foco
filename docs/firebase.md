@@ -1,20 +1,22 @@
 # Firebase do Meu Foco
 
-Projeto informado pelo proprietário: `gerenciamento-de-tarefas-3b28d`.
+Projeto conectado: `gerenciamento-de-tarefas-2f419`.
+
+Realtime Database: `https://gerenciamento-de-tarefas-2f419-default-rtdb.firebaseio.com`. O provedor e-mail/senha e as regras por UID já estão publicados. O modo padrão do aplicativo usa esse projeto na nuvem.
 
 ## Configuração da nuvem
 
 Execute na raiz:
 
 ```powershell
-.\scripts\configurar-firebase.ps1 -Projeto gerenciamento-de-tarefas-3b28d
+.\scripts\configurar-firebase.ps1 -Projeto gerenciamento-de-tarefas-2f419
 ```
 
 Entre na **conta que é proprietária do projeto** quando a página do Google abrir. A conta usada pelo terminal precisa conseguir visualizar o projeto com `firebase projects:list`.
 
 Se o projeto estiver em outra conta, use `-Conta EMAIL_DA_CONTA` no comando acima para abrir o login correto e selecionar essa conta para esta pasta.
 
-O script usa a sessão do Firebase CLI, registra os aplicativos Android/iOS/Web, ativa e-mail/senha, cria o Realtime Database padrão em `us-central1`, grava as configurações públicas e publica `database.rules.json`. Não é necessário criar uma chave privada de conta de serviço.
+O script usa a sessão do Firebase CLI, registra os aplicativos Android/iOS/Web, cria o Realtime Database padrão em `us-central1` e grava as configurações públicas. A publicação usa `firebase deploy --only auth,database` para habilitar e-mail/senha a partir de `firebase.json` e publicar `database.rules.json`. Não é necessário criar uma chave privada de conta de serviço.
 
 Arquivos gerados após a conexão:
 
@@ -64,7 +66,3 @@ Para um Android físico conectado por USB:
 ```
 
 No emulador Android padrão, o aplicativo usa `10.0.2.2` por padrão. O tráfego HTTP local é liberado somente no manifesto de depuração e somente para loopback/host do emulador.
-
-## Projeto provisório
-
-Durante a preparação, o CLI criou o projeto Google Cloud vazio `meu-foco-p2-9ac274`. A adição de Firebase foi recusada por permissão. Ele não foi usado pelo aplicativo; a configuração final deve apontar para `gerenciamento-de-tarefas-3b28d`.

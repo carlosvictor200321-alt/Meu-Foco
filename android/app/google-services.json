@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "616568726742",
+    "firebase_url": "https://gerenciamento-de-tarefas-2f419-default-rtdb.firebaseio.com",
+    "project_id": "gerenciamento-de-tarefas-2f419",
+    "storage_bucket": "gerenciamento-de-tarefas-2f419.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616568726742:android:78687764de0470704ad577",
+        "android_client_info": {
+          "package_name": "br.com.meufoco.meu_foco"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAs-NgtTMIZILBa6b9cS-7YoSdA9jI4xc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

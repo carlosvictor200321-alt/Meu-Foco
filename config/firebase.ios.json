@@ -1,0 +1,9 @@
+{
+  "USE_FIREBASE_EMULATOR": "false",
+  "FIREBASE_API_KEY": "AIzaSyDxC6bmYI-umvmDljTPoqjzW5XuH050c2A",
+  "FIREBASE_APP_ID": "1:616568726742:ios:757bab06291ee9554ad577",
+  "FIREBASE_PROJECT_ID": "gerenciamento-de-tarefas-2f419",
+  "FIREBASE_DATABASE_URL": "https://gerenciamento-de-tarefas-2f419-default-rtdb.firebaseio.com",
+  "FIREBASE_MESSAGING_SENDER_ID": "616568726742",
+  "FIREBASE_AUTH_DOMAIN": ""
+}
