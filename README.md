@@ -2,9 +2,15 @@
 
 Gerenciador de tarefas pessoais em **Flutter/Dart**, desenvolvido conforme os requisitos da atividade **P2 - Desenvolvimento de Aplicativo Mobile com Flutter e Firebase**. Interface em português, com versões Android, iOS e prévia em navegador.
 
+[Baixar APK Android](https://github.com/carlosvictor200321-alt/meu-foco-mobile/releases/latest/download/meu-foco.apk) · [Vídeo demonstrativo](docs/video/demonstracao.webm)
+
+| Início | Tema escuro |
+| --- | --- |
+| ![Início do Meu Foco](docs/capturas/03-inicio.png) | ![Configurações no tema escuro](docs/capturas/09-configuracoes-escuro.png) |
+
 ## Abrir o aplicativo
 
-- **Android:** instale `entrega/meu-foco.apk`. Essa versão já está conectada ao Firebase na nuvem e usa a internet. A versão `meu-foco-local.apk` exige os emuladores no computador e o redirecionamento USB descrito abaixo.
+- **Android:** baixe o [APK da versão mais recente](https://github.com/carlosvictor200321-alt/meu-foco-mobile/releases/latest/download/meu-foco.apk) ou instale `entrega/meu-foco.apk` após gerá-lo localmente. Essa versão já está conectada ao Firebase na nuvem e usa a internet. A versão `meu-foco-local.apk` exige os emuladores no computador e o redirecionamento USB descrito abaixo.
 - **Navegador:** dê dois cliques em **Abrir aplicativo.bat**.
 - **Teste local:** abra **Abrir emuladores.bat** e, em seguida, **Abrir aplicativo local.bat**.
 
@@ -136,6 +142,8 @@ Veja [o roteiro da demonstração](docs/roteiro-demonstracao.md), [a matriz dos 
 
 ## Entrega no Git
 
-O projeto deve ser enviado com o código, arquivos de configuração pública, regras, README e capturas. As pastas de build, dependências instaladas, exportações locais e chaves privadas são ignoradas pelo Git. Um repositório remoto pode ser associado com `git remote add origin URL_DO_REPOSITORIO` e enviado com `git push -u origin main`.
+Repositório: [carlosvictor200321-alt/meu-foco-mobile](https://github.com/carlosvictor200321-alt/meu-foco-mobile), na branch `main`. O código, as configurações públicas do Firebase, as regras, o README, as capturas e o vídeo estão versionados. Os APKs e o pacote do código-fonte estão disponíveis em [Releases](https://github.com/carlosvictor200321-alt/meu-foco-mobile/releases).
+
+As pastas de build, dependências instaladas, exportações locais, acessos temporários de teste e chaves privadas são ignoradas pelo Git.
 
 Referências oficiais: [Flutter](https://docs.flutter.dev/), [Firebase para Flutter](https://firebase.google.com/docs/flutter/setup), [Realtime Database](https://firebase.google.com/docs/database/flutter/start).
