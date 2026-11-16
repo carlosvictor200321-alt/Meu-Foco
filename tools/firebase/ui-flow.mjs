@@ -1,9 +1,10 @@
 import { chromium, expect } from '@playwright/test';
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
+import { randomBytes } from 'node:crypto';
 
 const baseUrl = process.env.APP_URL || 'http://127.0.0.1:5173';
 const email = 'ana.demo.' + Date.now().toString(36).slice(-5) + '@exemplo.com';
-const senha = 'FocoP2!2026';
+const senha = randomBytes(24).toString('base64url');
 const screenshots = 'docs/capturas';
 await mkdir(screenshots, { recursive: true });
 await mkdir('docs/video', { recursive: true });

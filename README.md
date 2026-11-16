@@ -2,7 +2,9 @@
 
 Gerenciador de tarefas pessoais em **Flutter/Dart**, desenvolvido conforme os requisitos da atividade **P2 - Desenvolvimento de Aplicativo Mobile com Flutter e Firebase**. Interface em português, com versões Android, iOS e prévia em navegador.
 
-[Baixar APK Android](https://github.com/carlosvictor200321-alt/meu-foco-mobile/releases/latest/download/meu-foco.apk) · [Vídeo demonstrativo](docs/video/demonstracao.webm)
+[Entrega completa da P2](entrega/README.md) · [Baixar APK Android](https://github.com/carlosvictor200321-alt/Meu-Foco/releases/latest/download/meu-foco.apk) · [Baixar vídeo](https://github.com/carlosvictor200321-alt/Meu-Foco/releases/latest/download/demonstracao.webm)
+
+A entrega inclui código-fonte, arquivos de execução, configuração do Firebase, orientações, 13 capturas e o vídeo com os oito itens solicitados. O [índice da entrega](entrega/README.md) relaciona cada exigência ao respectivo arquivo. Para baixar tudo junto, use o [pacote completo em ZIP](https://github.com/carlosvictor200321-alt/Meu-Foco/releases/latest/download/meu-foco-entrega-p2.zip).
 
 | Início | Tema escuro |
 | --- | --- |
@@ -10,7 +12,7 @@ Gerenciador de tarefas pessoais em **Flutter/Dart**, desenvolvido conforme os re
 
 ## Abrir o aplicativo
 
-- **Android:** baixe o [APK da versão mais recente](https://github.com/carlosvictor200321-alt/meu-foco-mobile/releases/latest/download/meu-foco.apk) ou instale `entrega/meu-foco.apk` após gerá-lo localmente. Essa versão já está conectada ao Firebase na nuvem e usa a internet. A versão `meu-foco-local.apk` exige os emuladores no computador e o redirecionamento USB descrito abaixo.
+- **Android:** baixe o [APK da versão mais recente](https://github.com/carlosvictor200321-alt/Meu-Foco/releases/latest/download/meu-foco.apk) ou instale `entrega/meu-foco.apk` do pacote completo. Essa versão já está conectada ao Firebase na nuvem e usa a internet. A versão `meu-foco-local.apk`, gerada opcionalmente para desenvolvimento, exige os emuladores no computador e o redirecionamento USB descrito abaixo.
 - **Navegador:** dê dois cliques em **Abrir aplicativo.bat**.
 - **Teste local:** abra **Abrir emuladores.bat** e, em seguida, **Abrir aplicativo local.bat**.
 
@@ -43,6 +45,8 @@ No Windows com scripts PowerShell restritos, use os arquivos `.bat` incluídos. 
 Para preparar outro computador, instale Flutter, Git, Node.js e as ferramentas da plataforma. Em seguida:
 
 ```powershell
+git clone https://github.com/carlosvictor200321-alt/Meu-Foco.git
+cd Meu-Foco
 flutter pub get
 npm.cmd ci --prefix tools/firebase
 ```
@@ -108,7 +112,7 @@ test/                           Testes de modelos, preferências e fluxos de int
 database.rules.json             Regras de acesso e validação do Realtime Database
 tools/firebase/                 Ferramentas de configuração e testes de integração
 docs/                           Requisitos, capturas, evidências e roteiro da demonstração
-entrega/                        APKs e pacote do código-fonte
+entrega/                        Índice da entrega; APK e pacotes disponíveis em Releases
 ```
 
 O campo `dataVencimento` representa `DataVencimento` do enunciado com a convenção de nomes do Dart. Todas as operações de tarefas usam o model `Tarefa`; os dados da sessão usam `Usuario`.
@@ -140,9 +144,11 @@ Para validar a nuvem, compile a prévia sem a definição de emulador e defina `
 
 Veja [o roteiro da demonstração](docs/roteiro-demonstracao.md), [a matriz dos requisitos](docs/requisitos.md) e as capturas em [docs/capturas](docs/capturas).
 
-## Entrega no Git
+## Entrega da P2 no GitHub
 
-Repositório: [carlosvictor200321-alt/meu-foco-mobile](https://github.com/carlosvictor200321-alt/meu-foco-mobile), na branch `main`. O código, as configurações públicas do Firebase, as regras, o README, as capturas e o vídeo estão versionados. Os APKs e o pacote do código-fonte estão disponíveis em [Releases](https://github.com/carlosvictor200321-alt/meu-foco-mobile/releases).
+Repositório público: [carlosvictor200321-alt/Meu-Foco](https://github.com/carlosvictor200321-alt/Meu-Foco), na branch `main`. O código, as configurações públicas do Firebase, as regras, o README, as capturas e o vídeo estão versionados. O [índice da entrega](entrega/README.md) localiza os materiais e os oito itens da demonstração obrigatória.
+
+Em [Releases](https://github.com/carlosvictor200321-alt/Meu-Foco/releases/latest), estão disponíveis o APK, o vídeo, o ZIP do código-fonte e o ZIP da entrega completa, que também inclui o APK. Após extrair o pacote completo, abra `entrega/README.md` para consultar as orientações.
 
 As pastas de build, dependências instaladas, exportações locais, acessos temporários de teste e chaves privadas são ignoradas pelo Git.
 
